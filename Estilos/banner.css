@@ -1,0 +1,189 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#banner {
+    background-color: #11131e;
+    height: 90vh;
+    margin: 0;
+    overflow: hidden; 
+    cursor: pointer;
+    position: relative;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+@keyframes rotate {
+from {
+    rotate: 0deg;
+}
+
+50% {
+    scale: 1 1.5;
+}
+
+to {
+    rotate: 360deg;
+}
+}
+
+#banner #blob {
+    max-width: 100%;
+    background-color: white;
+    height: 34vmax;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: linear-gradient(to right, aquamarine, mediumpurple);
+    animation: rotate 20s infinite;
+    opacity: 0.8;
+    overflow: hidden;
+}
+
+#banner #blur {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    backdrop-filter: blur(12vmax);
+}
+
+#banner h1 {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(3rem, 10vw, 10rem);
+    color: white;
+    white-space: nowrap;
+    padding: 0rem clamp(1rem, 2vw, 3rem);
+    border-radius: clamp(0.4rem, 0.75vw, 1rem);
+    margin: 0rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    z-index: 3;
+}
+
+#banner p {
+    font-family: 'Space Mono', monospace;
+    font-size: 2em;
+    color: white;
+    white-space: nowrap;
+    padding: 0rem clamp(1rem, 2vw, 3rem);
+    border-radius: clamp(0.4rem, 0.75vw, 1rem);
+    margin: 0rem;
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    translate: -50% -50%;
+    z-index: 3;
+}
+
+#banner button {
+    background-color: #ffffff;
+    font-family: 'Rubik', monospace;
+    font-size: 2em;
+    color: rgb(0, 0, 0);
+    white-space: nowrap;
+    padding: 0 1em;
+    border-radius: 40px;
+    margin: 0rem;
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    translate: -50% -50%;
+    z-index: 3;
+    border: none;
+    cursor: pointer;
+}
+
+#banner button:hover {
+    background-color: #11131e;
+    color: #ffffff;
+    transition: .3s;
+    box-shadow: 1px 1px 15px black;
+}
+
+h1#txt-titulo::after {
+    content: '|';
+    margin-left: 5px;
+    opacity: 1;
+    animation: pisca .9s infinite;
+}
+
+@keyframes pisca {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* -- Links -- */
+/*
+#banner #links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    padding: 1rem;
+}
+
+.meta-link {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+}
+
+.meta-link > :is(span, a) {
+font-family: "Rubik", sans-serif;
+color: white;
+}
+
+.meta-link > .label {
+width: 100px; 
+text-align: right;
+}
+
+.meta-link > a {
+text-decoration: none;
+outline: none;
+}
+
+.meta-link > a.source {
+color: rgb(94, 106, 210);
+}
+
+.meta-link > a:is(:hover, :focus) > i {
+color: white;  
+}
+
+.meta-link > a.youtube {
+color: rgb(239, 83, 80);
+}
+
+.meta-link > a.youtube > i {
+padding-top: 0.2rem; 
+}
+
+.meta-link > a > i {
+height: 1rem;
+line-height: 1rem;
+}
+*/
