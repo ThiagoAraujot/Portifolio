@@ -22,22 +22,79 @@ body {
     background-color: #000000;
 }
 
-nav {
-    overflow: hidden;
+#nav-bar {
+    /*overflow: hidden;
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 100;
-
-    height: 3em;
+    z-index: 100;*/
+    height: 8vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: #11131e;
     color: #ffff;
     font-size: 1.1em;
     padding: 2em;
-    
+}
+
+#nav-bar2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background-color: #ffff;
+    margin: 8px;
+}
+
+@media (max-width: 999px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    nav {
+        justify-content: space-between;
+    }
+
+    div#nav-imgs a {
+        display: none;
+    }
+
+    .nav-list {
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 50vw;
+        height: 90vh;
+        background-color: #11131e;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translate(100%);
+        transition: transform 0.3s ease-in;
+    }
+
+    .nav-list li {
+        margin-left: 0;
+        opacity: 0;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+}
+
+.nav-list.active {
+    transform: translateX(0);
 }
 
 nav ul {
@@ -56,6 +113,7 @@ nav ul {
 nav a {
     text-decoration: none;
     color: #ffff;
+    letter-spacing: 1px;
 }
 
 div#nav-imgs {
@@ -70,7 +128,7 @@ main {
     width: 100%;
     /*margin: auto;*/
     height: 100%;
-    border-radius: 10px;
+    border-radius: 0.625rem;
 }
 
 section#sobre-mim {
@@ -82,8 +140,8 @@ section#sobre-mim {
 }
 
 section#sobre-mim img {
-    width: 400px;
-    border-radius: 10px;
+    width: 25rem;
+    border-radius: 0.625rem;
 }
 
 div#sobre-mim-txt {
@@ -91,24 +149,25 @@ div#sobre-mim-txt {
     flex-direction: column;
     gap: 3em;   
     color: #ffff;
+    flex-wrap: wrap;
 }
 
 div#sobre-mim-txt div {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 0.313rem;
     flex-wrap: wrap;
 }
 
 div#sobre-mim-txt div h3 {
-    font-size: 24px;
+    font-size: 1.5rem;
     color: var(--corBranca);
     border-bottom: 2px solid var(--corPrimaria);
-    width: 90px;
+    width: 5.625rem;
 }
 
 div#sobre-mim-txt div p {
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 300;
     color: var(--corBranca);
 }
@@ -121,21 +180,21 @@ section#info {
 
 section#info h3 {
     margin: auto;
-    padding: 8px;
+    padding: 0.5rem;
     margin-bottom: 0.5em;
     font-size: 2em;
     color: var(--corBranca);
     border-bottom: 2px solid var(--corPrimaria);
-    width: 200px;
+    width: 12.5rem;
     text-align: center;
 }
 
 section#info p {
     margin: auto;
     text-align: center;
-    max-width: 900px;
+    max-width: 56.25rem;
     color: #ffff;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 300;
     line-height: 1.3;
 }
@@ -148,12 +207,12 @@ section#skills {
 
 section#skills h3 {
     margin: auto;
-    padding: 8px;
+    padding: 0.5rem;
     margin-bottom: 0.9em;
     font-size: 2em;
     color: var(--corBranca);
     border-bottom: 2px solid var(--corPrimaria);
-    width: 150px;
+    width: 9.375rem;
     text-align: center;
 }
 
@@ -164,7 +223,7 @@ div.skills-coluna {
 }
 
 div.skills-coluna img {
-    width: 128px;
+    width: 8rem;
 }
 
 #projetos {
@@ -178,12 +237,12 @@ div.skills-coluna img {
 
 #projetos h3 {
     margin: auto;
-    padding: 8px;
+    padding: 0.5rem;
     margin-bottom: 0.9em;
     font-size: 2em;
     color: var(--corBranca);
     border-bottom: 2px solid var(--corPrimaria);
-    width: 160px;
+    width: 10rem;
     text-align: center;
 }
 
@@ -192,7 +251,7 @@ div.skills-coluna img {
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 1.25rem;
 
 }
 
@@ -201,7 +260,6 @@ div.skills-coluna img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /*flex-basis: 30%;*/
 }
 
 .projeto-div img {
@@ -215,65 +273,62 @@ div.skills-coluna img {
 }
 
 .projeto-div h2 {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 500;
-    line-height: 23px;
+    line-height: 1.438rem;
     letter-spacing: 0em;
     text-align: center;
     color: #FFFFFF;
-    margin-top: 10px;
+    margin-top: 0.625rem;
 }
 
 .projeto-div p {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 400;
-    line-height: 18px;
+    line-height: 1.125rem;
     letter-spacing: 0em;
     text-align: center;
     color: #828282;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
 }
 
 #projetos-container div {
     background-color: #212121;
     border: 1px solid #333333;
     border-bottom: 4px solid var(--corPrimaria);
-    width: 350px;
-    height: 250px
+    width: 21.875rem;
+    height: 15.625rem;
 }
 
 
 section#certificados h3 {
-    padding: 8px;
+    padding: 0.5rem;
     margin: auto;
     margin-bottom: 0.9em;
     font-size: 2em;
     color: var(--corBranca);
     border-bottom: 2px solid var(--corPrimaria);
-    width: 210px;
+    width: 13.125rem;
     text-align: center;
 }
 
 .box {
-    padding-top: 30px;
-    margin-top: 0px;
+    padding-top: 1.875rem;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    border-radius: 20px;
+    border-radius: 1.25rem;
 }
 
 .box .card {
     position: relative;
-    width: 200px;
-    height: 400px;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-bottom: 30px;
-    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.63);
-    border-radius: 20px;
+    width: 12.5rem;
+    height: 25rem;
+    margin: 1.875rem;
+    box-shadow: 1.25rem 1.25rem 50px rgba(0, 0, 0, 0.63);
+    border-radius: 1.25rem;
     background: rgb(77, 73, 73);
     overflow: hidden;
     display: flex;
@@ -284,7 +339,7 @@ section#certificados h3 {
 }
 
 .box .card .content {
-    padding: 20px;
+    padding: 1.25rem;
     text-align: center;
     /*transform: translateY(100px);
     opacity: 0;
@@ -297,8 +352,8 @@ section#certificados h3 {
 }
 
 .card h1 {
-    font-size: 20pt;
-    margin: 8px;
+    font-size: 1.5em;
+    margin: 0.5rem;
     color: #ffff;
 }
 
@@ -308,9 +363,9 @@ section#certificados h3 {
 
 .card button {
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 1.25rem;
     padding: 1em;
-    border-radius: 20px;
+    border-radius: 1.25rem;
     background-color: #ffffff;
     border: none;
 }
@@ -322,12 +377,12 @@ section#certificados h3 {
 }
 
 .content {
-    padding: 15px;
+    padding: 0.938rem;
 }
 
 .foto {
     width: 150px;
-    border-radius: 20px;
+    border-radius: 1.25rem;
 }
 
 section#formação {
@@ -347,13 +402,13 @@ div#container {
     justify-content: center;
     align-items: center;
     border: 1px solid black;
-    width: 900px;
-    border-radius: 20px;
+    width: 56.25rem;
+    border-radius: 1.25rem;
     background-color: #ed195c;
 }
 
 div#container img {
-    width: 350px;
+    width: 21.875rem;
     border-radius: 50%;
 }
 
@@ -367,14 +422,14 @@ div#container h4 {
     position: fixed;
     background-color: var(--corPrimaria);
     color: #fff;
-    width: 44px;
-    height: 44px;
+    width: 2.75rem;
+    height: 2.75rem;
     text-align: center;
     line-height: 1;
-    font-size: 16px;
+    font-size: 1rem;
     border-radius: 50%;
-    right: 15px;
-    bottom: 15px;
+    right: 0.938rem;
+    bottom: 0.938rem;
     transition: all 0.5s ease 0s;
     z-index: 11;
     text-decoration: none;
@@ -383,5 +438,5 @@ div#container h4 {
 .material-symbols-outlined {
     display: flex;
     justify-content: center;
-    margin-top: 8px;
+    margin-top: 0.5rem;
 }

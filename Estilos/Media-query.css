@@ -1,0 +1,5 @@
+@media (max-width: 480px) {
+    section#sobre-mim img {
+        max-width: 200px;
+    }
+}
